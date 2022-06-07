@@ -1,0 +1,190 @@
+#2
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword"
+)
+
+print(mydb)
+
+#4
+
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword"
+)
+
+mycursor = mb.cursor()
+
+mycursor.execute("SHOW DATABASES")
+
+for x in mycursor
+    print(x)
+
+
+#7
+
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword"
+)
+
+mycursor = mb.cursor()
+
+sql = "DROP DATABASE menagerie"
+
+mycursor.execute(sql)
+
+
+#10
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="menagerie"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20),species VARCHAR(2), sex CHAR(1),birth DATE date, death DATE)")
+
+#11
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="menagerie"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("DESCRIBE pet")
+
+for x in mycursor:
+    print(x)
+
+
+#14
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="menagerie"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT * FROM pet")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+    print(x)
+
+
+#17
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="menagerie"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT * FROM pet WHERE species ='dog' and sex = 'f'")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+    print(x)
+
+#20
+
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="menagerie"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT name, birth FROM pet")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+    print(x)
+
+
+#23
+
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="menagerie"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT owner, COUNT(*) FROM pet GROUP BY owner")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+    print(x)
+
+
+#25
+
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="menagerie"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT name, birth, MONTH(birth) FROM pet")
+
+myresult = mycursor.fetchall()
+print(" name  birth   month ")
+print("---------------------")
+
+for x in myresult:
+    print(x)
